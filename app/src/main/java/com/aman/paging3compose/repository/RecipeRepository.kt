@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import com.aman.paging3compose.api.RetrofitInstance
 import com.aman.paging3compose.model.RecipeX
 import com.aman.paging3compose.paging.RecipePagingSource
+import com.aman.paging3compose.utils.Const
 import kotlinx.coroutines.flow.Flow
 
 class RecipeRepository {
@@ -14,7 +15,7 @@ class RecipeRepository {
 
     fun getRecipes() : Flow<PagingData<RecipeX>> = Pager(
         config = PagingConfig(
-            pageSize = 10,
+            pageSize = Const.PAGE_SIZE,
             enablePlaceholders = false
         ),
         pagingSourceFactory = {
